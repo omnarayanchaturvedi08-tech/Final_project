@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Session — FreakOFit GYM</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/style/appointment.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="logo">FreakOFit<span>GYM</span></a>
+      <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
+    </nav>
+
+    <div class="page-wrap">
+      <!-- LEFT -->
+      <div class="apt-info">
+        <div class="apt-info-content">
+          <p class="tag">Free Trial Session</p>
+          <h1>
+            BOOK YOUR<br />FIRST<br /><span style="color: var(--red)"
+              >SESSION</span
+            >
+          </h1>
+          <p>
+            Start your fitness journey with a complimentary trial class. No
+            commitment needed — just show up and feel the difference.
+          </p>
+          <div class="perks">
+            <div class="perk">
+              <div class="perk-icon"><i class="fas fa-check"></i></div>
+              <span class="perk-text"
+                >100% Free first class — no credit card required</span
+              >
+            </div>
+            <div class="perk">
+              <div class="perk-icon"><i class="fas fa-user-tie"></i></div>
+              <span class="perk-text"
+                >Personal trainer walks you through everything</span
+              >
+            </div>
+            <div class="perk">
+              <div class="perk-icon"><i class="fas fa-clock"></i></div>
+              <span class="perk-text"
+                >Flexible timing to fit your schedule</span
+              >
+            </div>
+            <div class="perk">
+              <div class="perk-icon"><i class="fas fa-phone"></i></div>
+              <span class="perk-text">We confirm via call within 2 hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="apt-form-wrap">
+        <div class="apt-form">
+          <h2>BOOK A SESSION</h2>
+          <p class="sub">
+            Fill the form and we'll confirm your slot within 2 hours.
+          </p>
+
+          <div class="alert alert-error" id="errAlert">
+            <i class="fas fa-exclamation-circle"></i><span id="errMsg"></span>
+          </div>
+          <div class="alert alert-success" id="sucAlert">
+            <i class="fas fa-check-circle"></i
+            ><span>Appointment booked! We'll contact you shortly. 🎉</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <div class="input-wrap">
+                <i class="fas fa-user"></i
+                ><input
+                  type="text"
+                  id="fName"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <div class="input-wrap">
+                <i class="fas fa-phone"></i
+                ><input
+                  type="tel"
+                  id="fPhone"
+                  placeholder="+91 XXXXX"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <div class="input-wrap">
+              <i class="fas fa-envelope"></i
+              ><input
+                type="email"
+                id="fEmail"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Preferred Date</label>
+              <div class="input-wrap">
+                <i class="fas fa-calendar"></i
+                ><input type="date" id="fDate" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Preferred Time</label>
+              <div class="input-wrap">
+                <i class="fas fa-clock"></i
+                ><input type="time" id="fTime" required />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Select Service</label>
+            <div class="services-grid">
+              <div
+                class="service-opt"
+                onclick="selectService('Personal Training', this)"
+              >
+                <i class="fas fa-dumbbell"></i><span>Personal Training</span>
+              </div>
+              <div
+                class="service-opt"
+                onclick="selectService('Group Class', this)"
+              >
+                <i class="fas fa-users"></i><span>Group Class</span>
+              </div>
+              <div
+                class="service-opt"
+                onclick="selectService('Nutrition Consultation', this)"
+              >
+                <i class="fas fa-apple-alt"></i><span>Nutrition</span>
+              </div>
+              <div
+                class="service-opt"
+                onclick="selectService('Fitness Assessment', this)"
+              >
+                <i class="fas fa-clipboard-check"></i><span>Assessment</span>
+              </div>
+              <div
+                class="service-opt"
+                onclick="selectService('Yoga Session', this)"
+              >
+                <i class="fas fa-spa"></i><span>Yoga</span>
+              </div>
+              <div
+                class="service-opt"
+                onclick="selectService('Cardio Training', this)"
+              >
+                <i class="fas fa-heartbeat"></i><span>Cardio</span>
+              </div>
+            </div>
+            <input type="hidden" id="fService" />
+          </div>
+
+          <div class="form-group">
+            <label>Additional Notes (Optional)</label>
+            <div class="input-wrap">
+              <i class="fas fa-comment"></i
+              ><textarea
+                id="fMessage"
+                placeholder="Any health concerns, goals, or special requests..."
+              ></textarea>
+            </div>
+          </div>
+
+          <button class="submit-btn" id="submitBtn" onclick="bookAppointment()">
+            <i class="fas fa-calendar-check"></i> CONFIRM BOOKING
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/js/appointment.js"></script>
+  </body>
+</html>
