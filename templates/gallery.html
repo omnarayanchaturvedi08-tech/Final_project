@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery — FreakOFit GYM</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600&family=Barlow+Condensed:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/style/gallery.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="logo">FreakOFit<span>GYM</span></a>
+      <a href="/" class="back-link"
+        ><i class="fas fa-arrow-left"></i> Back to Home</a
+      >
+    </nav>
+
+    <div class="hero-strip">
+      <p class="tag">Our Facility</p>
+      <h1>GYM <span style="color: var(--red)">GALLERY</span></h1>
+    </div>
+
+    <div class="gallery-wrap">
+      <div class="gallery-grid">
+        <div class="g-item tall" onclick="openLB(this)">
+          <img
+            src="/static/images/physical_fitness.jpg"
+            alt="Physical Fitness"
+          />
+          <div class="g-overlay">
+            <span class="g-caption">Physical Fitness</span>
+          </div>
+        </div>
+        <div class="g-item" onclick="openLB(this)">
+          <img src="/static/images/strength.jpg" alt="Strength Training" />
+          <div class="g-overlay">
+            <span class="g-caption">Strength Training</span>
+          </div>
+        </div>
+        <div class="g-item" onclick="openLB(this)">
+          <img src="/static/images/cardio.jpg" alt="Cardio" />
+          <div class="g-overlay">
+            <span class="g-caption">Cardio Zone</span>
+          </div>
+        </div>
+        <div class="g-item" onclick="openLB(this)">
+          <img src="/static/images/fatloss.jpg" alt="Fat Loss" />
+          <div class="g-overlay"><span class="g-caption">Fat Loss</span></div>
+        </div>
+        <div class="g-item tall" onclick="openLB(this)">
+          <img src="/static/images/weightlifting.jpg" alt="Weightlifting" />
+          <div class="g-overlay">
+            <span class="g-caption">Weightlifting</span>
+          </div>
+        </div>
+        <div class="g-item" onclick="openLB(this)">
+          <img src="/static/images/weight_gain.jpg" alt="Weight Gain" />
+          <div class="g-overlay">
+            <span class="g-caption">Weight Gain</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLB()">
+      <button class="lb-close" onclick="closeLB()">
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="" id="lbImg" alt="" />
+    </div>
+
+    <script src="/static/js/gallery.js"></script>
+  </body>
+</html>
